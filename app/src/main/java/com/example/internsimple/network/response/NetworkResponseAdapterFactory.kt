@@ -1,4 +1,4 @@
-package com.example.internsimple.network
+package com.example.internsimple.network.response
 
 import retrofit2.Call
 import retrofit2.CallAdapter

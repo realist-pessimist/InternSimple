@@ -1,4 +1,4 @@
-package com.example.internsimple.model
+package com.example.internsimple.models
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

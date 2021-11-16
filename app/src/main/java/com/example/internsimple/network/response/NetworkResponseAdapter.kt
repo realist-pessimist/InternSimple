@@ -1,4 +1,4 @@
-package com.example.internsimple.network
+package com.example.internsimple.network.response
 
 import okhttp3.ResponseBody
 import retrofit2.Call

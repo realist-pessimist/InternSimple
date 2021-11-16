@@ -2,8 +2,8 @@ package com.example.internsimple.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import com.example.internsimple.R
+import com.example.internsimple.ui.characterslist.CharactersViewModel
 import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         viewModel.onSetupUi()
-        viewModel.character.observe(this) {
+        viewModel.characters.observe(this) {
             //Log.e(TAG, it.toString())
         }
     }

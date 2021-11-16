@@ -1,7 +1,7 @@
 package com.example.internsimple.di
 
 import com.example.internsimple.network.ApiService
-import com.example.internsimple.network.NetworkResponseAdapterFactory
+import com.example.internsimple.network.response.NetworkResponseAdapterFactory
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
