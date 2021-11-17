@@ -21,6 +21,7 @@ object Versions {
     const val coroutines = "1.5.0"
     const val retrofit = "2.9.0"
     const val okhttp = "4.9.2"
+    const val glide = "4.12.0"
 
     //Test
     const val rules = "1.0.1"

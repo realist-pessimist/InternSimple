@@ -17,6 +17,7 @@ object Dependencies {
     private const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
     private const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     private const val retrofitGson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    private const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
     private const val okhttpLogging = "com.squareup.okhttp3:logging-interceptor:${Versions.okhttp}"
     private const val legacySupport = "androidx.legacy:legacy-support-v4:${Versions.androidXLegacySupport}"
 
@@ -45,6 +46,7 @@ object Dependencies {
         add(coroutines)
         add(retrofit)
         add(retrofitGson)
+        add(glide)
         add(okhttpLogging)
         add(koinCore)
         add(koinCompat)

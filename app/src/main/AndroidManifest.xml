@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.internsimple">
+    package="com.example.rickandmorty">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
-        android:name=".App"
+        android:name="com.example.rickandmorty.App"
         android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,7 +15,9 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Internsimple">
         <activity
-            android:name=".ui.MainActivity"
+            android:name="com.example.rickandmorty.ui.MainActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/AppTheme.OverlapSystemBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
