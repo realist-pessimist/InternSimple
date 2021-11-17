@@ -3,6 +3,7 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 object Dependencies {
     //Kotlin
     private const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
+    private const val navigationFragment = "androidx.navigation:navigation-fragment:${Versions.navigation}"
 
     // App dependencies
     private const val appcompat = "androidx.appcompat:appcompat:${Versions.appCompat}"
@@ -22,7 +23,7 @@ object Dependencies {
     // Architecture Components
     private const val lifecycleViewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.archLifecycle}"
     private const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.archLifecycle}"
-    private const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
+    private const val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     private const val navigationUI = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
     private const val fragment = "androidx.fragment:fragment:${Versions.fragment}"
 
@@ -52,6 +53,7 @@ object Dependencies {
         add(lifecycleViewModel)
         add(lifecycleLiveData)
         add(navigationFragment)
+        add(navigationFragmentKtx)
         add(navigationUI)
     }
 

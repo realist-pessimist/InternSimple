@@ -1,4 +1,4 @@
-package com.example.internsimple.ui.characterslist
+package com.example.internsimple.ui.characters
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -14,9 +14,14 @@ class CharactersViewModel(
     private val _characters = MutableLiveData<List<Character>>()
     val characters: LiveData<List<Character>> = _characters
 
+    private val _dataLoading = MutableLiveData<Boolean>()
+    val dataLoading: LiveData<Boolean> = _dataLoading
+
     fun onSetupUi() {
+        _dataLoading.value = true
         viewModelScope.launch {
             _characters.postValue(getCharactersUseCase.getCharacters())
+            _dataLoading.value = false
         }
     }
 }
