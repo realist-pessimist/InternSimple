@@ -19,4 +19,12 @@ class CharacterRepository(private val apiService: ApiService): ICharacterReposit
             is NetworkResponse.NetworkError -> null
             is NetworkResponse.UnknownError -> null
         }
+
+    override suspend fun filterCharacters(queryName: String) =
+        when(val response = apiService.filterCharacters(queryName)) {
+            is NetworkResponse.Success -> response.body
+            is NetworkResponse.ApiError -> null
+            is NetworkResponse.NetworkError -> null
+            is NetworkResponse.UnknownError -> null
+        }
 }

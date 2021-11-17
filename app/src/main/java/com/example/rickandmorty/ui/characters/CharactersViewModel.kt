@@ -6,11 +6,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.Event
 import com.example.rickandmorty.domain.usecases.GetCharactersUseCase
+import com.example.rickandmorty.domain.usecases.SearchCharactersUseCase
 import com.example.rickandmorty.models.Character
 import kotlinx.coroutines.launch
 
 class CharactersViewModel(
-    private val getCharactersUseCase: GetCharactersUseCase
+    private val getCharactersUseCase: GetCharactersUseCase,
+    private val searchCharactersUseCase: SearchCharactersUseCase
 ): ViewModel() {
     private val _characters = MutableLiveData<List<Character>>()
     val characters: LiveData<List<Character>> = _characters
@@ -23,6 +25,13 @@ class CharactersViewModel(
 
     init {
         loadCharacters()
+    }
+
+    fun onSearch(queryName: String){
+        viewModelScope.launch {
+            _characters.postValue(searchCharactersUseCase.filterCharacters(queryName))
+            _dataLoading.value = false
+        }
     }
 
     /**

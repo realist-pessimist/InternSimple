@@ -56,6 +56,7 @@
                     tools:src="@drawable/ic_person_placeholder"/>
 
                 <TextView
+                    style="@style/SingleText"
                     android:id="@+id/tv_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -68,6 +69,7 @@
                     tools:text="Name: Rick Sanchez"/>
 
                 <TextView
+                    style="@style/SingleText"
                     android:id="@+id/tv_gender"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -80,6 +82,7 @@
                     tools:text="Gender: Male"/>
 
                 <TextView
+                    style="@style/SingleText"
                     android:id="@+id/tv_status"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -92,6 +95,7 @@
                     tools:text="Status: Alive"/>
 
                 <TextView
+                    style="@style/SingleText"
                     android:id="@+id/tv_location"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -101,9 +105,10 @@
                     app:layout_constraintStart_toEndOf="@+id/iv_avatar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/tv_status"
-                    tools:text="Species: Human"/>
+                    tools:text="Species: Humanasdfasdfasdfsadfasdfsdafsdaf"/>
 
                 <TextView
+                    style="@style/SingleText"
                     android:id="@+id/tv_created"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"

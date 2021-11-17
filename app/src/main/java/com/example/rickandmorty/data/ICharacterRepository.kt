@@ -6,4 +6,5 @@ import com.example.rickandmorty.models.CharacterResponse
 interface ICharacterRepository {
     suspend fun getCharacters(): CharacterResponse?
     suspend fun getCharacter(id: Int): Character?
+    suspend fun filterCharacters(queryName: String): CharacterResponse?
 }

@@ -6,6 +6,7 @@ import com.example.rickandmorty.network.response.GenericError
 import com.example.rickandmorty.network.response.NetworkResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 typealias GenericResponse<S> = NetworkResponse<S, GenericError>
 
@@ -15,4 +16,7 @@ interface ApiService {
 
     @GET("api/character/{id}")
     suspend fun getCharacter(@Path("id") id: Int): GenericResponse<Character>
+
+    @GET("api/character/")
+    suspend fun filterCharacters(@Query("name") name: String): GenericResponse<CharacterResponse>
 }

@@ -1,7 +1,9 @@
 package com.example.rickandmorty.models
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 class CharacterResponse (
-    val results: List<Character>
+    @SerializedName("results")
+    val items: List<Character>
 ): Serializable

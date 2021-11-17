@@ -2,17 +2,18 @@ package com.example.rickandmorty.ui.characters
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.rickandmorty.EventObserver
+import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentCharactersBinding
+import com.example.rickandmorty.utils.extensions.onQueryTextChanged
 import com.example.rickandmorty.utils.extensions.setupRefreshLayout
 import org.koin.android.ext.android.inject
 
-class CharactersFragment: Fragment() {
+class CharactersFragment : Fragment() {
     private val viewModel: CharactersViewModel by inject()
 
     private lateinit var listAdapter: CharactersAdapter
@@ -33,9 +34,19 @@ class CharactersFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
 
+        setupAppBar()
         setupListAdapter()
         setupRefreshLayout(viewDataBinding.refreshLayout, viewDataBinding.rvCharacters)
         setupNavigation()
+    }
+
+    private fun setupAppBar() {
+        val searchItem = viewDataBinding.toolbar.menu.findItem(R.id.search)
+        val searchView = searchItem.actionView as SearchView
+        searchView.maxWidth = Integer.MAX_VALUE
+        searchView.onQueryTextChanged {
+            viewModel.onSearch(it)
+        }
     }
 
     private fun setupListAdapter() {
@@ -44,7 +55,7 @@ class CharactersFragment: Fragment() {
             listAdapter = CharactersAdapter(viewModel)
             viewDataBinding.rvCharacters.adapter = listAdapter
         } else {
-            Log.e(TAG,"ViewModel not initialized when attempting to set up adapter.")
+            Log.e(TAG, "ViewModel not initialized when attempting to set up adapter.")
         }
     }
 
