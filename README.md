@@ -21,9 +21,9 @@
 - Navigation Architecture Component
 
 ## Дизайн-макет приложения
-![image info](./Characters.png)
-![image info](./CharactersFilter.png)
-![image info](./CharacterDetails.png)
+![image info](media/Characters.png)
+![image info](media/CharactersFilter.png)
+![image info](media/CharacterDetails.png)
 
 ## Демонстрация работы приложения
-![Alt Text](./Demostration.gif)
+![Alt Text](media/Demostration.gif)
