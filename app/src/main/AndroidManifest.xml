@@ -14,17 +14,6 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Internsimple">
-        <activity
-            android:name="com.example.rickandmorty.ui.MainActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:theme="@style/AppTheme.OverlapSystemBar"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>
