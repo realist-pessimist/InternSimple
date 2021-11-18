@@ -6,13 +6,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rickandmorty.Event
 import com.example.rickandmorty.domain.usecases.GetCharactersUseCase
-import com.example.rickandmorty.domain.usecases.SearchCharactersUseCase
 import com.example.rickandmorty.models.Character
 import kotlinx.coroutines.launch
 
+//TODO(Необходимо доработать функционал ViewModel с учетом возможности фильтрации персонажей по имени)
 class CharactersViewModel(
-    private val getCharactersUseCase: GetCharactersUseCase,
-    private val searchCharactersUseCase: SearchCharactersUseCase
+    private val getCharactersUseCase: GetCharactersUseCase
 ): ViewModel() {
     private val _characters = MutableLiveData<List<Character>>()
     val characters: LiveData<List<Character>> = _characters
@@ -25,13 +24,6 @@ class CharactersViewModel(
 
     init {
         loadCharacters()
-    }
-
-    fun onSearch(queryName: String){
-        viewModelScope.launch {
-            _characters.postValue(searchCharactersUseCase.filterCharacters(queryName))
-            _dataLoading.value = false
-        }
     }
 
     /**

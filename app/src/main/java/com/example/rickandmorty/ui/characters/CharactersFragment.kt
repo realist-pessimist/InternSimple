@@ -34,19 +34,11 @@ class CharactersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
 
-        setupAppBar()
+        //TODO(Необходимо добавить SearchView с обращением ко ViewModel
+        // для дальнейшей фильтрации персонажей)
         setupListAdapter()
         setupRefreshLayout(viewDataBinding.refreshLayout, viewDataBinding.rvCharacters)
         setupNavigation()
-    }
-
-    private fun setupAppBar() {
-        val searchItem = viewDataBinding.toolbar.menu.findItem(R.id.search)
-        val searchView = searchItem.actionView as SearchView
-        searchView.maxWidth = Integer.MAX_VALUE
-        searchView.onQueryTextChanged {
-            viewModel.onSearch(it)
-        }
     }
 
     private fun setupListAdapter() {

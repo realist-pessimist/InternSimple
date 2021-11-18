@@ -11,20 +11,5 @@ class CharacterRepository(private val apiService: ApiService): ICharacterReposit
              is NetworkResponse.NetworkError -> null
              is NetworkResponse.UnknownError -> null
          }
-
-    override suspend fun getCharacter(id: Int) =
-        when(val response = apiService.getCharacter(id)) {
-            is NetworkResponse.Success -> response.body
-            is NetworkResponse.ApiError -> null
-            is NetworkResponse.NetworkError -> null
-            is NetworkResponse.UnknownError -> null
-        }
-
-    override suspend fun filterCharacters(queryName: String) =
-        when(val response = apiService.filterCharacters(queryName)) {
-            is NetworkResponse.Success -> response.body
-            is NetworkResponse.ApiError -> null
-            is NetworkResponse.NetworkError -> null
-            is NetworkResponse.UnknownError -> null
-        }
+    //TODO(Необходимо добавить реализацию методов получения персонажа по id и фильтрации списка)
 }

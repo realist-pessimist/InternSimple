@@ -1,13 +1,11 @@
 package com.example.rickandmorty.di
 
 import com.example.rickandmorty.domain.services.CharacterService
-import com.example.rickandmorty.domain.usecases.GetCharacterDetailUseCase
 import com.example.rickandmorty.domain.usecases.GetCharactersUseCase
-import com.example.rickandmorty.domain.usecases.SearchCharactersUseCase
 import org.koin.dsl.module
 
+//TODO(Необходимо внедрить UseCase(фильтрация и получение персонажа по id)
+// зависимости для CharacterService)
 val domainModule = module {
     factory<GetCharactersUseCase> { CharacterService(characterRepository = get()) }
-    factory<GetCharacterDetailUseCase> { CharacterService(characterRepository = get()) }
-    factory<SearchCharactersUseCase> { CharacterService(characterRepository = get()) }
 }

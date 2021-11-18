@@ -1,6 +1,4 @@
 <resources>
     <string name="app_name">RickAndMorty</string>
     <string name="character_list_title">Character List</string>
-    <string name="formatter_date">%1$td-%1$tm-%1$tY</string>
-    <string name="search_title">Search</string>
 </resources>

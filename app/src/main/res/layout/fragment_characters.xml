@@ -23,12 +23,12 @@
             android:layout_height="wrap_content"
             android:background="@color/white">
 
+            <!--TODO нужно добавить SearchView в AppBar-->
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 app:title="@string/character_list_title"
-                app:menu="@menu/search_menu"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
